@@ -56,7 +56,6 @@ elif Service == "Eyebrow":
         st.success("Price Rs..100") 
    
 elif Service == "Facial":
-   elif Service == "Facial":
     st.header("Facial Section")
     col1,col2 = st.columns(2)
     with col1:
@@ -108,4 +107,5 @@ if st.button("Predict"):
     features =np.array([[Haircut,Facial,Makeup,Eyebrows]])
     prediction = model.predict(features)[0]
     st.success(f"Predicted Price:Rs... {prediction:,.2f}")
+
 
