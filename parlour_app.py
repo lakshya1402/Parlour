@@ -56,11 +56,16 @@ elif Service == "Eyebrow":
         st.success("Price Rs..100") 
    
 elif Service == "Facial":
+   elif Service == "Facial":
     st.header("Facial Section")
-    st.image("Facial.jpg")
-    st.write(""" 
-Nidhi's Beauty Parlour Provides skincare treatment performed by licensed professionals, such as aestheticians, that typically includes a combination of cleansing, exfoliation, extraction, massage, and hydration  """)
-    st.success("Facial Charges Rs...200")
+    col1,col2 = st.columns(2)
+    with col1:
+        st.image("Facial1.jpg")
+        st.success("Price Rs..200")
+    with col2:
+        st.image("Facial2.jpg")
+        st.success("Price Rs 500")
+
 elif Service == "Makeup":
     st.header("Makeup Section")
     col1,col2 = st.columns(2)
@@ -103,3 +108,4 @@ if st.button("Predict"):
     features =np.array([[Haircut,Facial,Makeup,Eyebrows]])
     prediction = model.predict(features)[0]
     st.success(f"Predicted Price:Rs... {prediction:,.2f}")
+
